@@ -162,11 +162,6 @@ packaging. Output goes to `dist/`.
 
 ## What's new in 1.3.1
 
-* Quick installation guide; pysisyphus licence (GPL v3) and citations checked and stated in the
-  README, `THIRD_PARTY_NOTICES.md`, the pysisyphus dialog and every `summary.txt`.
-
-## What's new in 1.3.0
-
 * **TS results are stored automatically** in a results folder you choose (default
   `Documents\Mol3D Bridge\TS results`), one clearly named folder per run with a summary, the TS,
   both minima, the IRC path, an SD file with energies, the inputs and the full pysisyphus output.
