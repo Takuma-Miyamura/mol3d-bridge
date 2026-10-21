@@ -1,6 +1,6 @@
 # Mol3D Bridge
 
-A Chem3D-style 3D companion for **ChemDraw** and **ReShiki** — desktop app (Windows, macOS,
+A C3D companion for **ChemDraw** and **ReShiki** — desktop app (Windows, macOS,
 Linux), Python library and command-line tool.
 
 Paste a drawing → 3D model → adjust it by hand → minimize it (MMFF94, MMFF94s, UFF,
