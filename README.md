@@ -168,8 +168,6 @@ packaging. Output goes to `dist/`.
   Stopped and failed runs are kept too (marked in the folder name). *Open a saved run…* reopens
   any of them.
 
-## What's new in 1.2.4
-
 * TS window: the **active structure** (the one you last clicked) has a blue frame and a blue
   title; Copy, Paste, Swap and Relabel act on it.
 * **Copy 3D / Paste** in both structures (also Ctrl+C / Ctrl+V): copies the exact 3D structure
@@ -178,65 +176,6 @@ packaging. Output goes to `dist/`.
 * Numbering check: the bonds that change are drawn dashed in orange (formed on the reactant side,
   broken on the product side) and the warning stays a warning – the calculation no longer asks
   to renumber; you swap atoms as you see fit.
-
-## What's new in 1.2.3
-
-* Windows: pysisyphus stopped with `OSError: [WinError 1314] A required privilege is not held`
-  (it creates a symbolic link, which Windows only allows with administrator rights or Developer
-  Mode). Mol3D Bridge now starts pysisyphus through a small launcher that skips that optional link.
-
-## What's new in 1.2.2
-
-* **One-click pysisyphus installation** in the TS window, like the xtb download, and automatic
-  detection of pysisyphus installed with pip (also when its folder is not on PATH).
-
-## What's new in 1.2.1
-
-* Windows: pysisyphus crashed with `UnicodeEncodeError: 'charmap' codec` when it printed
-  formulas such as C₅₄H₃₆. pysis is now always started in UTF-8 mode.
-
-## What's new in 1.2.0
-
-* **Transition-state search with pysisyphus** in its own window: reactant and product side by side,
-  atom-number display, automatic and manual renumbering, the full pysisyphus input as a form and
-  as YAML, live output monitor with the growing reaction path, and the TS plus both IRC minima as
-  results.
-
-## What's new in 1.1.0
-
-* **Python API** (`from mol3d_bridge import Molecule3D`) and **`m3b` command-line tool**:
-  build, minimize (MMFF94/MMFF94s/UFF/GFN2-xTB/GFN-FF), conformer search, set internal
-  coordinates, export XYZ/MOL/SDF/PDB/ORCA/Gaussian — no window needed.
-* Runs on **Python 3.9 and newer** (tested on 3.9, 3.12, 3.13). The desktop window is an optional
-  extra (`pip install "mol3d-bridge[gui]"`).
-* Licensing prepared for public release: author and copyright, full licence texts in `licenses/`,
-  licence files of the exact bundled package versions collected into every installer
-  (`third_party_licenses/`), Qt/xtb source information, trademark notice.
-
-## What's new in 1.0.2
-
-* **ChemDraw asked "Change Settings?" and, with *Don't Change Settings*, wanted a document 9212
-  pages wide.** The ChemDraw data declared a default bond length of 0.0002 pt (RDKit writes the
-  value in raw 1/65536-pt units), so ChemDraw scaled the structure up ~67,000x. Copies now declare
-  the real bond length and are drawn at it.
-* New *Settings > ChemDraw bond length for copies...*: 14.4 pt (ACS Document 1996, default), 30 pt
-  (ChemDraw "New Document") or custom - set it to your document style.
-
-## What's new in 1.0
-
-* Real desktop application with installers, icon, About box, file associations, crash log
-  (*Help ▸ Open log / data folder*).
-* **Paste no longer minimizes.** The structure is built in 3D and shown oriented like your
-  drawing; press **Ctrl+M** when you want to minimize (or switch on *Settings ▸ Minimize
-  automatically after pasting*).
-* **Strained / unusual structures fixed** (e.g. cycloparaphenylenes such as
-  `C1(C2=CC=C(C3=CC=C(C4=CC=C5C=C4)C=C3)C=C2)=CC=C(C6=CC=C5C=C6)C=C1`): 3D building now tries
-  ETKDG, then more tolerant distance geometry, each with a time limit – it can no longer hang –
-  and as a last resort starts from the drawing itself.
-* **ChemDraw / ReShiki pre-cleaned drawings:** coordinates in other units (points, 1/65536 pt
-  from 3D CDX) are rescaled, drawings that only carry a few depth hints are no longer mistaken
-  for 3D models, invalid structures give a clear message, and pasting while a calculation runs is
-  refused instead of colliding with it.
 
 ## Workflow
 
