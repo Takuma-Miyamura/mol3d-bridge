@@ -10,10 +10,6 @@ rotatable 3D structure, or write ORCA / Gaussian input files.
 © 2026 Takuma Miyamura — MIT licence (see `LICENSE`). Third-party components and their
 licences: `THIRD_PARTY_NOTICES.md` and `licenses/`.
 
-> ChemDraw and Chem3D are trademarks of Revvity, Inc. Mol3D Bridge is an independent project and
-> is not affiliated with, sponsored or endorsed by Revvity. ReShiki is an independent open-source
-> project; Mol3D Bridge contains no ReShiki code.
-
 ## Quick installation (Windows)
 
 1. **Download** the project as a zip file (on GitHub: green **Code** button ▸ **Download ZIP**).
