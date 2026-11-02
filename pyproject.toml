@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mol3d-bridge"
+dynamic = ["version"]
+description = "Chem3D-style 3D companion for ChemDraw and ReShiki: build molecules in 3D, minimize them (MMFF94, UFF, GFN2-xTB), copy them back as 2D or rotatable 3D drawings, write ORCA / Gaussian inputs. Desktop app, Python API and command line."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Takuma Miyamura" }]
+requires-python = ">=3.9"
+keywords = ["chemistry", "molecular modeling", "MMFF94", "xtb", "ChemDraw", "ORCA", "Gaussian", "conformer"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+]
+dependencies = [
+    "rdkit>=2025.9",
+    "numpy>=1.24",
+]
+
+[project.optional-dependencies]
+# the desktop window
+gui = [
+    "PySide6-Essentials>=6.6",
+    "pyobjc-framework-Cocoa; sys_platform == 'darwin'",
+]
+# building the installers
+build = [
+    "PySide6-Essentials>=6.6",
+    "pyobjc-framework-Cocoa; sys_platform == 'darwin'",
+    "pyinstaller>=6.6",
+    "pillow>=10",
+]
+
+[project.scripts]
+m3b = "mol3d_bridge.cli:main"
+
+[project.gui-scripts]
+mol3d-bridge = "mol3d_bridge.launcher:main"
+
+[project.urls]
+Source = "https://github.com/Takuma-Miyamura/mol3d-bridge"
+
+[tool.setuptools.dynamic]
+version = { attr = "mol3d_bridge.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+mol3d_bridge = ["resources/*"]
